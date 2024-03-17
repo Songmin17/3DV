@@ -1,0 +1,52 @@
+fit_3d.py:
+
+gt joints: joints
+conf: ???
+sph_regs: interpen for gender 
+keypoint info?? = joints
+
+
+ablation study: 
+
+
+fit_3d:
+1. how to adjust the weights for pose + shape prior? What are some good weights?
+    see paper 
+
+2. where in the code are the gt joint and the estimated joint? 
+run_single_fit input: j2d (predicting these to be the gt joints)
+opt_j2d: optimized joints 
+
+
+3. why isn't anything being saved to opt_viz directory? (maybe wait for all 20 images)
+
+4. what is taking so long to process all the images?
+
+5. why isn't len(joints) equal to len(optimized_jt)? 14 vs 25 
+
+overall pipeline in code: 
+
+fit_3d:
+in main: 
+joints (gt)
+conf confidence interval for joints 
+load img 
+run_single_fit on img -> obtain params, images (empty list)
+params: 
+    cam_t: cam trans. vector 
+    f: ?? 
+    pose: 
+    betas: 
+    * opt_j2d: optimized joints
+    * verts:
+    * faces:
+
+
+1. find_bbox: use optimized joints 
+    what: bbox algorithm 
+
+    
+
+2. drawKeyPoints 
+
+how to debug: do these on input img + save the img 
